@@ -1,4 +1,6 @@
 # LFI PHP wrapper 
+## `LFI-PHP-wrapper.txt`
+- Tested against the playground in https://tryhackme.com/room/filepathtraversal
 - The payload list given in `LFI-PHP-wrapper.txt` should be modified by replacing the placedholder (`*`) with a common filename, such as `index.php` or `/etc/passwd`.
 
 ```shell
